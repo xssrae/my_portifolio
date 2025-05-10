@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects</title>
+  <link rel="stylesheet" href="/styles/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <nav class="theme-toggle-container">
+    <li class="theme-toggle">
+      <button onclick="toggleTheme()" class="ripple">
+        <i id="theme-icon" data-lucide="sun"></i>
+      </button>
+    </li>
+  </nav>
+
+  <header class="header">
+    <h1>{xssrae.dev}</h1>
+    <p>Junior Software Engineer</p>
+
+    <nav class="navbar">
+      <ul class="nav-menu">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container"> 
+    <section id="projects" class="projects reveal">
+      <h2 class="section-header">Projects <span class="cursor"></span></h2>
+
+      <div class="project-grid">
+        <div class="project-card reveal">
+          <img src="/assets/raegarden.png" alt="Rae Garden Project" class="project-image">
+          <div class="project-header">
+            <h3><span class="folder-icon">📁</span> Rae Garden</h3>
+          </div>
+          <div class="project-body">
+            <p>A personal blog where I post papers, studies, and reflections about my life and professional journey. This platform showcases my writing and research while serving as a knowledge repository.</p>
+            <div class="project-tags">
+              <span>Spring Boot</span>
+              <span>Angular</span>
+              <span>RESTful API</span>
+              <span>Blog</span>
+            </div>
+            <div class="project-links">
+              <a href="https://rae-garden.vercel.app/"><span class="folder-icon">🔗</span>View Project</a>
+              <a href="https://github.com/xssrae/my-garden"><span class="folder-icon">💻</span>Source Code</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <img src="/assets/aurelyn.png" alt="Aurelyn - Help for Neurodivergent Students" class="project-image">
+          <div class="project-header">
+            <h3><span class="folder-icon">📁</span>Aurelyn - Help for Neurodivergent Students</h3>
+          </div>
+          <div class="project-body">
+            <p>Aurelyn is an accessible and welcoming platform that offers study, organization and quality of life tips for neurodivergent people, with the support of a personalized artificial intelligence assistant</p>
+            <div class="project-tags">
+              <span>Python</span>
+              <span>Generative AI</span>
+            </div>
+            <div class="project-links">
+              <a href="#"><span class="folder-icon">🔗</span>View Project</a>
+              <a href="#"><span class="folder-icon">💻</span>Source Code</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Rae's Portfolio. All rights reserved.</p>
+    <div class="contact">
+      <a href="mailto:fontesraquel624@gmail.com"><img src="/assets/envelope.svg" alt="Email" title="Email"></a>
+      <a href="https://github.com/xssrae"><img src="/assets/github.svg" alt="GitHub" title="GitHub"></a>
+      <a href="https://linkedin.com/in/xssrae"><img src="/assets/linkedin.svg" alt="LinkedIn" title="LinkedIn"></a>
+    </div>
+  </footer>
+
+  <script src="/js/animations.js"></script>
+  <script src="/js/theme.js"></script>
+
+</body>
+</html>
