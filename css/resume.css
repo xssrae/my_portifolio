@@ -1,0 +1,283 @@
+:root {
+    --light: #faf4ed;
+    --lightgray: #ece3dc;
+    --highlight: #e0d9d3; 
+    --gray: #797593;
+    --darkgray: #4c4963; 
+    --dark: #9a7bbe;     
+    --secondary: #7b6891; 
+    --tertiary: #df8e1d;  
+    --textHighlight: #56949f; 
+}
+
+[data-theme="dark"] {
+    --light: #191724;       
+    --lightgray: #232136;   
+    --gray: #908caa;        
+    --darkgray: #e0def4;    
+    --dark: #c4a7e7;        
+    --secondary: #b7bdf8;
+    --tertiary: #bca87c;
+    --highlight: #2a273f;   
+    --textHighlight: #286983; 
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--light);
+  color: var(--darkgray); 
+}
+
+.theme-toggle-container {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 50;
+}
+
+.theme-toggle-container button {
+    padding: 0.75rem;
+    border-radius: 9999px;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+    background-color: var(--lightgray);
+    color: var(--dark); 
+    position: relative; 
+    overflow: hidden; 
+}
+.theme-toggle-container button:hover {
+    background-color: var(--highlight);
+}
+
+.ripple-circle {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.4);
+    width: 100px;
+    height: 100px;
+    margin-top: -50px;
+    margin-left: -50px;
+    animation: ripple-animation 0.6s linear;
+    transform: scale(0);
+}
+
+@keyframes ripple-animation {
+    to {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+.header h1 { color: var(--dark); }
+.header p { color: var(--gray); }
+
+.nav-menu a, footer .contact-link {
+    color: var(--gray);
+    font-weight: 500;
+    transition-property: color;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+.nav-menu a:hover, footer .contact-link:hover {
+    color: var(--textHighlight);
+}
+
+.section-header {
+    color: var(--dark);
+    font-size: 1.875rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+@media (min-width: 640px) {
+    .section-header {
+        font-size: 2.25rem; 
+        margin-bottom: 3rem;
+    }
+}
+.cursor {
+    display: inline-block;
+    width: 10px;
+    height: 1em; 
+    background-color: var(--dark);
+    margin-left: 5px;
+    animation: blink-cursor-resume 1s infinite;
+    vertical-align: text-bottom;
+}
+@keyframes blink-cursor-resume {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+
+.experiences {
+    margin-bottom: 3rem;
+}
+.experience-list {
+    list-style: none;
+    padding-left: 0;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.experience-list li {
+    background-color: var(--lightgray);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.experience-list li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+.experience-list h3 {
+    color: var(--dark);
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+.experience-list .experience-period {
+    color: var(--secondary);
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+    font-style: italic;
+}
+.experience-list .experience-description {
+    color: var(--gray);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+
+.skills-section {
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.skills-div {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+.skills-list {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+    max-width: 700px; 
+}
+.skills-list li {
+    background-color: var(--textHighlight);
+    color: var(--light);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: background-color 0.3s ease;
+}
+.skills-list li:hover {
+    background-color: var(--secondary);
+}
+[data-theme="dark"] .skills-list li {
+    color: var(--darkgray);
+    background-color: var(--highlight);
+}
+[data-theme="dark"] .skills-list li:hover {
+    background-color: var(--tertiary);
+    color: var(--light);
+}
+
+.resume-download-section {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background-color: var(--lightgray);
+    border-radius: 8px;
+}
+.resume-download-section p {
+    color: var(--gray);
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+.download-btn {
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--dark);
+    color: var(--light);
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.download-btn:hover {
+    background-color: var(--secondary);
+    transform: translateY(-2px);
+}
+.download-btn i {
+    transition: transform 0.3s ease;
+}
+.download-btn:hover i {
+    transform: rotate(5deg) scale(1.1);
+}
+[data-theme="dark"] .download-btn {
+    background-color: var(--dark);
+    color: var(--light);
+}
+[data-theme="dark"] .download-btn:hover {
+    background-color: var(--secondary);
+}
+
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+footer {
+    background-color: var(--lightgray);
+    padding-top: 2rem; 
+    padding-bottom: 2rem;
+    text-align: center;
+    margin-top: 3rem; 
+}
+@media (min-width: 640px) { 
+    footer {
+        padding-top: 3rem; 
+        padding-bottom: 3rem;
+        margin-top: 4rem; 
+    }
+}
+footer p {
+    color: var(--darkgray);
+    margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+    .experience-list h3 {
+        font-size: 1.1rem;
+    }
+    .experience-list .experience-description, .skills-list li {
+        font-size: 0.9rem;
+    }
+    .download-btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+    .section-header {
+        font-size: 1.6rem;
+    }
+}
