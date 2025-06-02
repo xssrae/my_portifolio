@@ -1,38 +1,42 @@
 :root {
-    --light: #faf4ed;
-    --lightgray: #ece3dc;
-    --highlight: #e0d9d3; 
+    --light: #fffaf3;
+    --lightgray: #faf4ed;
+    --highlight: #f2e9e1; 
     --gray: #797593;
-    --darkgray: #4c4963; 
-    --dark: #9a7bbe;     
+    --darkgray: #575279; 
+    --dark: #907aa9;     
     --secondary: #7b6891; 
-    --tertiary: #df8e1d;  
-    --textHighlight: #56949f; 
+    --tertiary: #b4637a;
+    --textHighlight: #56949f;
+    --textHighlight2: #ea9d34;
 }
 
 [data-theme="dark"] {
-    --light: #191724;       
-    --lightgray: #232136;   
+    --light: #232136;       
+    --lightgray: #2a273f;   
+    --highlight: #393552; 
     --gray: #908caa;        
     --darkgray: #e0def4;    
-    --dark: #c4a7e7;        
-    --secondary: #b7bdf8;
-    --tertiary: #bca87c;
+    --dark: #c4a7e7;
+    --secondary: #9ccfd8;
+    --tertiary: #eb6f92;
     --highlight: #2a273f;   
-    --textHighlight: #286983; 
+    --textHighlight: #f6c177; 
 }
 
 body {
-  font-family: 'Inter', sans-serif;
-  background-color: var(--light);
-  color: var(--darkgray); 
+    font-family: 'Inter', sans-serif;
+    background-color: var(--light);
+    color: var(--darkgray);
+    margin: 0; /* Adicionado para remover margens padrão */
+    padding: 2rem; /* Adicionado espaçamento para melhor visualização */
 }
 
 .theme-toggle-container {
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
-  z-index: 50;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 50;
 }
 
 .theme-toggle-container button {
@@ -43,9 +47,11 @@ body {
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 150ms;
     background-color: var(--lightgray);
-    color: var(--dark); 
-    position: relative; 
-    overflow: hidden; 
+    color: var(--dark);
+    position: relative;
+    overflow: hidden;
+    border: none; /* Adicionado para remover borda padrão */
+    cursor: pointer; /* Adicionado para indicar clicabilidade */
 }
 .theme-toggle-container button:hover {
     background-color: var(--highlight);
@@ -93,14 +99,14 @@ body {
 }
 @media (min-width: 640px) {
     .section-header {
-        font-size: 2.25rem; 
+        font-size: 2.25rem;
         margin-bottom: 3rem;
     }
 }
 .cursor {
     display: inline-block;
     width: 10px;
-    height: 1em; 
+    height: 1em;
     background-color: var(--dark);
     margin-left: 5px;
     animation: blink-cursor-resume 1s infinite;
@@ -168,30 +174,40 @@ body {
     padding-left: 0;
     display: flex;
     flex-wrap: wrap;
-    gap: 0.75rem;
+    gap: 0.75rem; /* Espaçamento entre os itens */
     justify-content: center;
-    max-width: 700px; 
+    max-width: 700px;
 }
 .skills-list li {
-    background-color: var(--textHighlight);
-    color: var(--light);
+    display: flex; /* Para alinhar ícone e texto */
+    align-items: center; /* Alinha verticalmente ícone e texto */
+    background-color: var(--highlight);
+    color: var(--darkgrayt);
     padding: 0.5rem 1rem;
     border-radius: 20px;
     font-size: 0.9rem;
     font-weight: 500;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     transition: background-color 0.3s ease;
 }
-.skills-list li:hover {
-    background-color: var(--secondary);
+
+.skill-icon {
+    width: 20px; /* Tamanho do ícone */
+    height: 20px; /* Tamanho do ícone */
+    margin-right: 0.5rem; /* Espaço entre o ícone e o texto */
+    /* Para ícones SVG que podem ter preenchimento/cor própria,
+        você pode precisar ajustar ou remover a cor aqui se necessário.
+        Para ícones PNG como os de icons8, isso não terá efeito na cor do ícone em si. */
 }
+
+/* Ajuste para ícones do icons8 que podem ter cor de fundo ou precisar de filtro para tema escuro */
+[data-theme="dark"] .skill-icon.icon8-icon {
+        filter: invert(1) brightness(1.5); /* Exemplo de filtro para tema escuro */
+}
+
 [data-theme="dark"] .skills-list li {
     color: var(--darkgray);
     background-color: var(--highlight);
-}
-[data-theme="dark"] .skills-list li:hover {
-    background-color: var(--tertiary);
-    color: var(--light);
 }
 
 .resume-download-section {
@@ -200,6 +216,8 @@ body {
     padding: 2rem;
     background-color: var(--lightgray);
     border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .resume-download-section p {
     color: var(--gray);
@@ -222,8 +240,9 @@ body {
     background-color: var(--secondary);
     transform: translateY(-2px);
 }
-.download-btn i {
+.download-btn i { /* Supondo que você use <i> para ícones no botão */
     transition: transform 0.3s ease;
+    margin-right: 0.5rem; /* Espaçamento para o ícone no botão */
 }
 .download-btn:hover i {
     transform: rotate(5deg) scale(1.1);
@@ -236,29 +255,30 @@ body {
     background-color: var(--secondary);
 }
 
-
 .reveal {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 .reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
 }
 
 footer {
     background-color: var(--lightgray);
-    padding-top: 2rem; 
+    padding-top: 2rem;
     padding-bottom: 2rem;
     text-align: center;
-    margin-top: 3rem; 
+    margin-top: 3rem;
+        box-shadow: 0 4px 12px rgba(0.8,0,0,0);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-@media (min-width: 640px) { 
+@media (min-width: 640px) {
     footer {
-        padding-top: 3rem; 
+        padding-top: 3rem;
         padding-bottom: 3rem;
-        margin-top: 4rem; 
+        margin-top: 4rem;
     }
 }
 footer p {
@@ -271,7 +291,15 @@ footer p {
         font-size: 1.1rem;
     }
     .experience-list .experience-description, .skills-list li {
-        font-size: 0.9rem;
+        font-size: 0.9rem; /* Mantido, mas o padding pode precisar de ajuste se o texto quebrar */
+    }
+    .skills-list li {
+        padding: 0.4rem 0.8rem; /* Ajuste leve no padding para telas menores */
+    }
+    .skill-icon {
+        width: 18px; /* Ícones um pouco menores em telas pequenas */
+        height: 18px;
+        margin-right: 0.4rem;
     }
     .download-btn {
         padding: 0.6rem 1.2rem;

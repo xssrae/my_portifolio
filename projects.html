@@ -14,7 +14,7 @@
   
 </head>
 
-<body class="min-h-screen flex flex-col">
+<body class="flex flex-col min-h-screen">
   <div class="theme-toggle-container">
     <button onclick="toggleTheme()" aria-label="Alternar tema">
       <i id="theme-icon" data-lucide="sun" class="w-6 h-6"></i>
@@ -35,23 +35,23 @@
     </nav>
   </header>
 
-  <main class="container mx-auto px-4 sm:px-6 lg:px-8 flex-grow py-8 sm:py-12"> 
+  <main class="container mx-auto px-4 sm:px-6 lg:px-8 flex-grow py-8 sm:py-12 flex flex-col justify-center"> 
     <section id="projects" class="projects">
       <h2 class="section-header">Projetos<span class="cursor"></span></h2>
 
       <div class="project-grid">
         <div class="project-card reveal">
-          <img src="https://placehold.co/600x400/9a7bbe/faf4ed?text=Rae+Garden&font=inter" alt="Rae Garden Project" class="project-image w-full object-cover">
+          <img src="/assets/rae-garden.png" alt="Rae Garden" class="project-image w-full object-cover">
           <div class="project-header">
             <h3><i data-lucide="folder" class="folder-icon"></i> Rae Garden</h3>
           </div>
           <div class="project-body flex-grow flex flex-col">
-            <p>Um blog pessoal onde posto artigos, estudos e reflexões sobre minha vida e jornada profissional. Esta plataforma mostra minha escrita e pesquisa, servindo como um repositório de conhecimento.</p>
+            <p>Um blog pessoal baseado no projeto open souce Quartz, onde posto artigos, estudos e reflexões sobre minha vida e jornada profissional. Esta plataforma mostra minha escrita e pesquisa, servindo como um repositório de conhecimento.</p>
             <div class="project-tags flex flex-wrap mt-auto pt-4">
-              <span>Spring Boot</span>
-              <span>Angular</span>
-              <span>RESTful API</span>
-              <span>Blog</span>
+              <span>Typescript</span>
+              <span>React</span>
+              <span>Tailwindcss</span>
+              <span>Obsidian</span>
             </div>
             <div class="project-links">
               <a href="https://rae-garden.vercel.app/" target="_blank" rel="noopener noreferrer"><i data-lucide="link" class="w-4 h-4"></i>Ver Projeto</a>
@@ -61,19 +61,39 @@
         </div>
 
         <div class="project-card reveal">
-          <img src="https://placehold.co/600x400/7b6891/faf4ed?text=Aurelyn&font=inter" alt="Aurelyn - Help for Neurodivergent Students" class="project-image w-full object-cover">
+          <img src="/assets/aurelyn.png" alt="Aurelyn" class="project-image w-full object-cover">
           <div class="project-header">
-            <h3><i data-lucide="folder" class="folder-icon"></i>Aurelyn - Ajuda para Estudantes Neurodivergentes</h3>
+          <h3><i data-lucide="folder" class="folder-icon"></i>Aurelyn</h3>
           </div>
           <div class="project-body flex-grow flex flex-col">
-            <p>Aurelyn é uma plataforma acessível e acolhedora que oferece dicas de estudo, organização e qualidade de vida para pessoas neurodivergentes, com o apoio de uma assistente de inteligência artificial personalizada.</p>
+            <p>Aurelyn é uma plataforma acessível e acolhedora que oferece dicas de estudo, organização e qualidade de vida para pessoas neurodivergentes, com o apoio de uma assistente de inteligência artificial personalizada. O projeto consiste no Frontend da Plataforma Aurelyn, utilizando as tecnologias HTML, CSS e JavaScript</p>
             <div class="project-tags flex flex-wrap mt-auto pt-4">
-              <span>Python</span>
-              <span>IA Generativa</span>
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
             </div>
             <div class="project-links">
-              <a href="#" target="_blank" rel="noopener noreferrer"><i data-lucide="link" class="w-4 h-4"></i>Ver Projeto</a>
+              <!-- <a href="#" target="_blank" rel="noopener noreferrer"><i data-lucide="link" class="w-4 h-4"></i>Ver Projeto</a> -->
               <a href="#" target="_blank" rel="noopener noreferrer"><i data-lucide="github" class="w-4 h-4"></i>Código Fonte</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <img src="/assets/desafio-itau.png" alt="Desafio Itau" class="project-image w-full object-cover">
+          <div class="project-header">
+          <h3><i data-lucide="folder" class="folder-icon"></i>Desafio Itau</h3>
+          </div>
+          <div class="project-body flex-grow flex flex-col">
+            <p>Minha solução do desafio para a vaga de Backend Junior do Itaú Unibanco. API REST em Java e Spring Boot</p>
+            <div class="project-tags flex flex-wrap mt-auto pt-4">
+              <span>Java</span>
+              <span>Spring Boot</span>
+              <span>Maven</span>
+            </div>
+            <div class="project-links">
+                <!-- <a href="#" target="_blank" rel="noopener noreferrer"><i data-lucide="link" class="w-4 h-4"></i>Ver Projeto</a> -->
+              <a href="https://github.com/xssrae/desafio-itau?tab=readme-ov-file" target="_blank" rel="noopener noreferrer"><i data-lucide="github" class="w-4 h-4"></i>Código Fonte</a>
             </div>
           </div>
         </div>

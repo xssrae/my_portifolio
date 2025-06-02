@@ -1,25 +1,27 @@
 :root {
-    --light: #faf4ed;
-    --lightgray: #ece3dc;
-    --highlight: #ece3dc; 
+    --light: #fffaf3;
+    --lightgray: #faf4ed;
+    --highlight: #f2e9e1; 
     --gray: #797593;
-    --darkgray: #4c4963; 
-    --dark: #9a7bbe;     
+    --darkgray: #575279; 
+    --dark: #907aa9;     
     --secondary: #7b6891; 
-    --tertiary: #df8e1d;  
-    --textHighlight: #56949f; 
+    --tertiary: #b4637a;
+    --textHighlight: #56949f;
+    --textHighlight2: #ea9d34;
 }
 
 [data-theme="dark"] {
-    --light: #191724;       
-    --lightgray: #232136;   
+    --light: #232136;       
+    --lightgray: #2a273f;   
+    --highlight: #393552; 
     --gray: #908caa;        
     --darkgray: #e0def4;    
-    --dark: #c4a7e7;        
-    --secondary: #b7bdf8;
-    --tertiary: #bca87c;
+    --dark: #c4a7e7;
+    --secondary: #9ccfd8;
+    --tertiary: #eb6f92;
     --highlight: #2a273f;   
-    --textHighlight: #286983; 
+    --textHighlight: #f6c177; 
 }
 
 body {
@@ -143,4 +145,3 @@ body {
 .tech-icons img:hover, .tech-icons svg:hover {
   transform: scale(1.1);
 }
-
