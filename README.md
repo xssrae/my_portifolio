@@ -1,5 +1,5 @@
 # {xssrae.dev}
 
-![portifolio](/assets/raeportifolio_preview.png)
+![portifolio]()
 
 Meu portifólio completo.
